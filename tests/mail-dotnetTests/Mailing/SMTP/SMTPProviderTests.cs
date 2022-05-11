@@ -6,7 +6,7 @@ namespace mail_dotnet.Mailing.SMTP.Tests {
     public class SMTPProviderTests {
         [TestMethod()]
         public void SendMailTest() {
-            SMTPProvider provider = new SMTPProvider() {
+            MailingProvider provider = new SMTPProvider() {
                 Host = TestVariables.HOST,
                 Port = TestVariables.PORT,
                 SslOption = TestVariables.SSL_OPTION,
@@ -15,7 +15,8 @@ namespace mail_dotnet.Mailing.SMTP.Tests {
             };
 
             provider.SendMail(
-                "Test Subject", "Test Body",
+                subject: "Test Subject",
+                body: "Test Body",
                 mailTo: mail_dotnetTests.Mailing.TestVariables.ADDRESS_WORKING_1
                 );
 

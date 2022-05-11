@@ -7,6 +7,6 @@ namespace mail_dotnet.Mailing {
         }
 
         public abstract void SendMail(MimeMessage message);
-        public abstract void SendMail(string subject, string body, string mailTo, string? mailFrom);
+        public abstract void SendMail(string subject, string body, string mailTo, string? mailFrom = null);
     }
 }
