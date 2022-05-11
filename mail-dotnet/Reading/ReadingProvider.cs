@@ -3,7 +3,7 @@ using MimeKit;
 
 namespace mail_dotnet.Reading {
     public abstract class ReadingProvider : MailProvider, IReadingProvider {
-        protected ReadingProvider(ILogger? _logger) : base(_logger) {
+        protected ReadingProvider(ILogger _logger, CancellationToken _cancellationToken) : base(_logger, _cancellationToken) {
         }
 
         public abstract string[] GetInboxList(bool unreadOnly = true);

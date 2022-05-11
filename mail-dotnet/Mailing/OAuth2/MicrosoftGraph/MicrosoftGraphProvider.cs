@@ -4,7 +4,7 @@ using MimeKit;
 namespace mail_dotnet.Mailing.OAuth2.MicrosoftGraph {
     public class MicrosoftGraphProvider : OAuth2Provider {
 
-        public MicrosoftGraphProvider(ILogger _logger) : base(_logger) {
+        public MicrosoftGraphProvider(ILogger _logger, CancellationToken _cancellationToken) : base(_logger, _cancellationToken) {
 
         }
 
