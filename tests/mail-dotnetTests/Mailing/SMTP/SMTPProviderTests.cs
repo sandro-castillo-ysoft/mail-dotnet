@@ -14,9 +14,10 @@ namespace mail_dotnet.Mailing.SMTP.Tests {
                 Password = TestVariables.PASSWORD,
             };
 
-            
-
-            provider.SendMail("Test Subject", "Test Body", mail_dotnetTests.Mailing.TestVariables.ADDRESS_WORKING_1);
+            provider.SendMail(
+                "Test Subject", "Test Body",
+                mailTo: mail_dotnetTests.Mailing.TestVariables.ADDRESS_WORKING_1
+                );
 
             Assert.IsTrue(true);
         }

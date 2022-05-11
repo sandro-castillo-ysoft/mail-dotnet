@@ -12,7 +12,7 @@ namespace mail_dotnet.Mailing.OAuth2.MicrosoftGraph {
             throw new NotImplementedException();
         }
 
-        public override void SendMail(string subject, string body, string mailTo) {
+        public override void SendMail(string subject, string body, string mailTo, string? mailFrom = null) {
             throw new NotImplementedException();
         }
 

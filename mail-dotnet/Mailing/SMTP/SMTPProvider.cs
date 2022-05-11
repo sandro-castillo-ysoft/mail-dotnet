@@ -59,10 +59,10 @@ namespace mail_dotnet.Mailing.SMTP {
             Client.Disconnect(true, cancellationToken);
         }
 
-        public override void SendMail(string subject, string body, string mailTo) {
+        public override void SendMail(string subject, string body, string mailTo, string? mailFrom = null) {
             string[] mailToList = mailTo.Split(',', StringSplitOptions.RemoveEmptyEntries);
 
-            MimeMessage message = Commons.Util.CreateMimeMessage(subject: subject, body: body, mailTo: mailToList);
+            MimeMessage message = Commons.Util.CreateMimeMessage(subject: subject, body: body, mailFrom: mailFrom ?? Username, mailTo: mailToList);
 
             SendMail(message);
         }
