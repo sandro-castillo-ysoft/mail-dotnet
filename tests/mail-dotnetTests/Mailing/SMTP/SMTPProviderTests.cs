@@ -1,17 +1,24 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using mail_dotnet.Mailing.SMTP;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using mail_dotnetTests.Mailing.SMTP;
 
 namespace mail_dotnet.Mailing.SMTP.Tests {
     [TestClass()]
     public class SMTPProviderTests {
         [TestMethod()]
         public void SendMailTest() {
-            throw new NotImplementedException();
+            SMTPProvider provider = new SMTPProvider() {
+                Host = TestVariables.HOST,
+                Port = TestVariables.PORT,
+                SslOption = TestVariables.SSL_OPTION,
+                Username = TestVariables.USERNAME,
+                Password = TestVariables.PASSWORD,
+            };
+
+            
+
+            provider.SendMail("Test Subject", "Test Body", mail_dotnetTests.Mailing.TestVariables.ADDRESS_WORKING_1);
+
+            Assert.IsTrue(true);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace mail_dotnet.Mailing.SMTP {
 
         public string Host { get; init; }
         public short Port { get; init; }
-        public SecureSocketOptions SslOption { get; init; }
+        public string SslOption { get; init; }
         public string Username { get; init; }
         public string Password { get; init; }
 
@@ -26,8 +26,11 @@ namespace mail_dotnet.Mailing.SMTP {
         }
 
         private void ConnectToSmtpServer() {
+            if (!Enum.TryParse(SslOption, out SecureSocketOptions sslOption))
+                sslOption = SecureSocketOptions.Auto;
+
             logger.LogTrace("Connecting to SMTP Server: [{0}:{1}]", Host, Port);
-            Client.Connect(Host, Port, SslOption, cancellationToken);
+            Client.Connect(Host, Port, sslOption, cancellationToken);
 
             try {
 
