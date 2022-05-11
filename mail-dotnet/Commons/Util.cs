@@ -82,7 +82,7 @@ namespace mail_dotnet.Commons {
                     fileStream.Close();
 
                 } catch (Exception) {
-                    // Handle exception? what do
+                    // to-do: Handle exception? what do
                 }
 
             }

@@ -6,9 +6,9 @@ namespace mail_dotnet {
         protected readonly ILogger logger;
         protected readonly CancellationToken cancellationToken;
 
-        protected MailProvider(ILogger? _logger, CancellationToken _cancellationToken) {
+        protected MailProvider(ILogger? _logger = null, CancellationToken? _cancellationToken = null) {
             logger = _logger ?? NullLogger.Instance;
-            cancellationToken = _cancellationToken;
+            cancellationToken = _cancellationToken ?? CancellationToken.None;
         }
 
         public abstract bool TestProvider(out string result);

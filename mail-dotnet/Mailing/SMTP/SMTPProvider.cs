@@ -9,7 +9,7 @@ namespace mail_dotnet.Mailing.SMTP {
     /// https://github.com/jstedfast/MailKit
     /// </summary>
     public class SMTPProvider : MailingProvider {
-        private readonly SmtpClient Client;
+        private readonly SmtpClient Client = new();
 
         public string Host { get; init; }
         public short Port { get; init; }
@@ -17,8 +17,12 @@ namespace mail_dotnet.Mailing.SMTP {
         public string Username { get; init; }
         public string Password { get; init; }
 
+        // to-do: Needs a way to load configuration
+        // Probably an interface load to keep it easy to read
+        public SMTPProvider() : base(null, null) {
+        }
+
         public SMTPProvider(ILogger _logger, CancellationToken _cancellationToken) : base(_logger, _cancellationToken) {
-            Client = new();
         }
 
         private void ConnectToSmtpServer() {
@@ -61,7 +65,7 @@ namespace mail_dotnet.Mailing.SMTP {
         }
 
         public override bool TestProvider(out string result) {
-            // how to better test?
+            // to-do: how to better test?
             // 1. send mail to admin
             // 2. authenticate against server
             throw new NotImplementedException();
