@@ -20,7 +20,7 @@ namespace mail_dotnet.Mailing.SMTP {
         // to-do: Needs a way to load configuration
         // Probably an interface load to keep it easy to read
         public SMTPProvider(
-            string host, string username, string password,
+            string username, string password, string host,
             short port = 587, string? sslOption = null,
             ILogger? _logger = null, CancellationToken? _cancellationToken = null) : base(_logger, _cancellationToken) {
 
