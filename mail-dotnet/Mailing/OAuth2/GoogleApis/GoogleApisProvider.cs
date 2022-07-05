@@ -4,8 +4,11 @@ using MimeKit;
 namespace mail_dotnet.Mailing.OAuth2.GoogleApis {
     public class GoogleApisProvider : OAuth2Provider {
 
-        public GoogleApisProvider(ILogger _logger, CancellationToken _cancellationToken) : base(_logger, _cancellationToken) {
+        public GoogleApisProvider(ILogger? _logger = null, CancellationToken? _cancellationToken = null) : base(_logger, _cancellationToken) {
+        }
 
+        public override void ConnectToServer() {
+            throw new NotImplementedException();
         }
 
         public override void SendMail(MimeMessage message) {

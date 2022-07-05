@@ -19,13 +19,10 @@ namespace mail_dotnet.Mailing.SMTP {
 
         // to-do: Needs a way to load configuration
         // Probably an interface load to keep it easy to read
-        public SMTPProvider() : base(null, null) {
+        public SMTPProvider(ILogger? _logger = null, CancellationToken? _cancellationToken = null) : base(_logger, _cancellationToken) {
         }
 
-        public SMTPProvider(ILogger _logger, CancellationToken _cancellationToken) : base(_logger, _cancellationToken) {
-        }
-
-        private void ConnectToSmtpServer() {
+        public override void ConnectToServer() {
             if (!Enum.TryParse(SslOption, out SecureSocketOptions sslOption))
                 sslOption = SecureSocketOptions.Auto;
 
@@ -46,12 +43,12 @@ namespace mail_dotnet.Mailing.SMTP {
                 }
 
             }
-            
+
         }
 
         public override void SendMail(MimeMessage message) {
             logger.LogTrace("Sending mail to [{0}] from [{1}] with subject [{2}]", message.To, message.From, message.Subject);
-            ConnectToSmtpServer();
+            ConnectToServer();
 
             string response = Client.Send(message, cancellationToken);
             logger.LogInformation("Mail sent with response: {0}", response);
@@ -73,5 +70,6 @@ namespace mail_dotnet.Mailing.SMTP {
             // 2. authenticate against server
             throw new NotImplementedException();
         }
+
     }
 }

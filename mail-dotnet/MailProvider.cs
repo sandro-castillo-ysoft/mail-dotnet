@@ -11,6 +11,7 @@ namespace mail_dotnet {
             cancellationToken = _cancellationToken ?? CancellationToken.None;
         }
 
+        public abstract void ConnectToServer();
         public abstract bool TestProvider(out string result);
     }
 }
