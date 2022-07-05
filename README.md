@@ -13,19 +13,22 @@ Scope of supported OAUTH:
 ## Sending Mails
 ### Send Mail
 Send an email using a MimeMessage class or passing string arguments as parameters
+
+#### SMTP Send
 ```
-MailingProvider provider = new SMTPProvider() {
-      Host = host,
-      Port = port,
-      SslOption = sslOption,
-      Username = username,
-      Password = password,
-  };
+MailingProvider provider = new SMTPProvider(username, password, host, port, sslOption);
   
 provider.SendMail(subject, body, mailTo, mailFrom);
 ```
 
-#### SMTP Send
-
-
 #### OAuth2 Send
+Microsoft Graph (aka Office365)
+```
+MailingProvider provider = new MicrosoftGraphProvider(
+    TenantId, ClientId, SecretValue, UserId
+  };
+  
+provider.SendMail(subject, body, mailTo, mailFrom);
+
+// mailFrom and UserID must be from the same account.
+```
