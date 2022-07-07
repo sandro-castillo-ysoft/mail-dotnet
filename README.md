@@ -1,7 +1,7 @@
 Net 6 Library for accessing email
 
 # Usage
-[Send Mail](#sending)
+[SMTP](#smtp-send) | [Office 365](#oauth2-send) | [Google Apis](#google-apis)
 
 ## Sending Mails
 ### Send Mail
@@ -15,7 +15,8 @@ provider.SendMail(subject, body, mailTo, mailFrom);
 ```
 
 #### OAuth2 Send
-Microsoft Graph (aka Office365)
+
+##### Microsoft Graph (aka Office365)
 App Registration must be given Administrator Consent and acces to https://graph.microsoft.com/Mail.Send .
 ```
 MailingProvider provider = new MicrosoftGraphProvider(
@@ -27,7 +28,7 @@ provider.SendMail(subject, body, mailTo, mailFrom);
 // mailFrom and UserID must be from the same account.
 ```
 
-Google Apis
+##### Google Apis
 Service Account must be given domain-wide delegation to https://www.googleapis.com/auth/gmail.send .
 ```
 MailingProvider provider = new GoogleApisProvider(
