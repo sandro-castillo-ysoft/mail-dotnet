@@ -1,14 +1,7 @@
 Net 6 Library for accessing email
 
-TODO:
-Create Provider for OAUTH GoogleApis
-Scope of supported OAUTH:
-  - Microsoft Graph
-  - Google
-
-
 # Usage
-[Send Mail](#sending) | [Reading Mail](#receiving)
+[Send Mail](#sending)
 
 ## Sending Mails
 ### Send Mail
