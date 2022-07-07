@@ -1,7 +1,7 @@
 Net 6 Library for accessing email through different mailing providers.
 
 # Usage
-[Send](#send-mail) | [Logging](#attach-a-logger) | [Complex Messages](#send-a-prepared-mimemessage)
+[Send](#sending-mails) | [Logging](#attach-a-logger) | [Complex Messages](#send-a-prepared-mimemessage)
 
 
 ## Sending Mails
