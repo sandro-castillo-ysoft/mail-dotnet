@@ -1,9 +1,12 @@
-Net 6 Library for accessing email
+Net 6 Library for accessing email through different mailing providers.
 
 # Usage
-[SMTP](#smtp-send) | [Office 365](#oauth2-send) | [Google Apis](#google-apis)
+[Send](#send-mail) | [Logging](#attach-a-logger) | [Complex Messages](#send-a-prepared-mimemessage)
+
 
 ## Sending Mails
+[SMTP](#smtp-send) | [Office 365](#oauth2-send) | [Google Apis](#google-apis)
+
 ### Send Mail
 Send an email using a MimeMessage class or passing string arguments as parameters
 
@@ -45,7 +48,7 @@ MailingProvider provider = new SMTPProvider(
   );
 ```
 
-### Send a prepared MimeMessage
+## Send a prepared MimeMessage
 If you require to send a more complex message, create a MimeKit.MimeMessage object and pass it to the SendMail method.
 ```
 provider.SendMail(mimeMessage);
