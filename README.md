@@ -41,3 +41,18 @@ MailingProvider provider = new GoogleApisProvider(
     ServiceAccountEmail, ImpersonatedAccountEmail, CredentialPrivateKey
   );
 ```
+
+## Attach a Logger
+Provider constructors allow passing an ILogger parameter. Example using SMTP Provider
+```
+MailingProvider provider = new SMTPProvider(
+  USERNAME, PASSWORD, HOST, PORT, SSL_OPTION,
+  _logger: myApplicationLogger
+  );
+```
+
+### Send a prepared MimeMessage
+If you require to send a more complex message, create a MimeKit.MimeMessage object and pass it to the SendMail method.
+```
+provider.SendMail(mimeMessage);
+```
