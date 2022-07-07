@@ -23,12 +23,21 @@ provider.SendMail(subject, body, mailTo, mailFrom);
 
 #### OAuth2 Send
 Microsoft Graph (aka Office365)
+App Registration must be given Administrator Consent and acces to https://graph.microsoft.com/Mail.Send .
 ```
 MailingProvider provider = new MicrosoftGraphProvider(
     TenantId, ClientId, SecretValue, UserId
-  };
+  );
   
 provider.SendMail(subject, body, mailTo, mailFrom);
 
 // mailFrom and UserID must be from the same account.
+```
+
+Google Apis
+Service Account must be given domain-wide delegation to https://www.googleapis.com/auth/gmail.send .
+```
+MailingProvider provider = new GoogleApisProvider(
+    ServiceAccountEmail, ImpersonatedAccountEmail, CredentialPrivateKey
+  );
 ```
