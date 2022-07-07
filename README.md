@@ -18,8 +18,11 @@ provider.SendMail(subject, body, mailTo, mailFrom);
 ```
 
 #### OAuth2 Send
+Allows sending emails by impersonating a user, this works only in a domain setting.
+
 
 ##### Microsoft Graph (aka Office365)
+Requires an Office365 impersonating account and App Registration created through Azure Portal.
 App Registration must be given Administrator Consent and acces to https://graph.microsoft.com/Mail.Send .
 ```
 MailingProvider provider = new MicrosoftGraphProvider(
@@ -32,12 +35,14 @@ provider.SendMail(subject, body, mailTo, mailFrom);
 ```
 
 ##### Google Apis
+Requires a Google Workspace service account and impesonating account.
 Service Account must be given domain-wide delegation to https://www.googleapis.com/auth/gmail.send .
 ```
 MailingProvider provider = new GoogleApisProvider(
     ServiceAccountEmail, ImpersonatedAccountEmail, CredentialPrivateKey
   );
 ```
+
 
 ## Attach a Logger
 Provider constructors allow passing an ILogger parameter. Example using SMTP Provider
@@ -47,6 +52,7 @@ MailingProvider provider = new SMTPProvider(
   _logger: myApplicationLogger
   );
 ```
+
 
 ## Send a prepared MimeMessage
 If you require to send a more complex message, create a MimeKit.MimeMessage object and pass it to the SendMail method.
