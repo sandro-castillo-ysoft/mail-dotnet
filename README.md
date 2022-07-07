@@ -16,6 +16,7 @@ MailingProvider provider = new SMTPProvider(username, password, host, port, sslO
   
 provider.SendMail(subject, body, mailTo, mailFrom);
 ```
+Ssl Option accepted values: None, Auto, StartTls, SslOnConnect, StartTlsWhenAvailable
 
 #### OAuth2 Send
 Allows sending emails by impersonating a user, this works only in a domain setting.
