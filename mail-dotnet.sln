@@ -9,6 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{8636B3D8
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mail-dotnetTests", "tests\mail-dotnetTests\mail-dotnetTests.csproj", "{3CC18871-1680-4A9C-A659-D6870E13247E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo-Projects", "Demo-Projects", "{3270044F-52A0-4276-A5D5-4312CFC80600}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailing-Demo", "demos\Mailing-Demo\Mailing-Demo.csproj", "{1C2F0749-8E25-421D-AAFB-A2BCBFEA4631}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +27,17 @@ Global
 		{3CC18871-1680-4A9C-A659-D6870E13247E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CC18871-1680-4A9C-A659-D6870E13247E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CC18871-1680-4A9C-A659-D6870E13247E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C2F0749-8E25-421D-AAFB-A2BCBFEA4631}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C2F0749-8E25-421D-AAFB-A2BCBFEA4631}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C2F0749-8E25-421D-AAFB-A2BCBFEA4631}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C2F0749-8E25-421D-AAFB-A2BCBFEA4631}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3CC18871-1680-4A9C-A659-D6870E13247E} = {8636B3D8-2CEC-45CB-AE1A-C99CD5A45C56}
+		{1C2F0749-8E25-421D-AAFB-A2BCBFEA4631} = {3270044F-52A0-4276-A5D5-4312CFC80600}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B5E47BD-33EF-4018-AA2C-9E8C358A0089}

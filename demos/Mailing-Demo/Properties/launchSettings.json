@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Mailing-Demo": {
+      "commandName": "Project",
+      "commandLineArgs": "sandro.castillo@ysoft.com"
+    }
+  }
+}

@@ -12,16 +12,14 @@ namespace mail_dotnet.Mailing.SMTP {
         private readonly SmtpClient Client = new();
 
         public string Host { get; }
-        public short Port { get; }
+        public int Port { get; }
         public string SslOption { get; }
         public string Username { get; }
         public string Password { get; }
 
-        // to-do: Needs a way to load configuration
-        // Probably an interface load to keep it easy to read
         public SMTPProvider(
             string username, string password, string host,
-            short port = 587, string? sslOption = null,
+            int port = 587, string? sslOption = null,
             ILogger? _logger = null, CancellationToken? _cancellationToken = null) : base(_logger, _cancellationToken) {
 
             Host = host;
